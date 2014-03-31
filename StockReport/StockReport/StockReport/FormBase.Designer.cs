@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FormBase
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(476, 348);
+            this.DoubleBuffered = true;
+            this.Name = "FormBase";
+            this.Text = "XX仓库管理系统－单机版";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -15,7 +15,7 @@ namespace StockReport
     public abstract class SQLiteHelper
     {
         //Database connection strings
-        public static readonly string connStr = ConfigurationManager.ConnectionStrings["SQLiteString"].ConnectionString;
+        public static string connStr; //= "data source=" + FormLogin.FilePath + ";password=stockxyz";
 
         /// <summary>
         /// 执行查询一个 SQLite 语句，返回影响的行数。
@@ -37,8 +37,12 @@ namespace StockReport
         /// <returns>受影响的行数</returns>
         public static int ExecuteNonQuery(string cmdText, CommandType type, params SQLiteParameter[] cmdParameters)
         {
-            SQLiteCommand cmd = BuildQueryCommand(cmdText, type, cmdParameters);
-            return cmd.ExecuteNonQuery();
+            using (SQLiteConnection conn = new SQLiteConnection(connStr))
+            {
+                conn.QuickOpen();
+                SQLiteCommand cmd = BuildQueryCommand(conn, cmdText, type, cmdParameters);
+                return cmd.ExecuteNonQuery();
+            }
         }
 
         /// <summary>
@@ -61,8 +65,12 @@ namespace StockReport
         /// <returns>第一行第一列的值</returns>
         public static object ExecuteScalar(string cmdText, CommandType type, params SQLiteParameter[] cmdParameters)
         {
-            SQLiteCommand cmd = BuildQueryCommand(cmdText, type, cmdParameters);
-            return cmd.ExecuteScalar();
+            using (SQLiteConnection conn = new SQLiteConnection(connStr))
+            {
+                conn.QuickOpen();
+                SQLiteCommand cmd = BuildQueryCommand(conn, cmdText, type, cmdParameters);
+                return cmd.ExecuteScalar();
+            }
         }
 
         /// <summary>
@@ -85,12 +93,16 @@ namespace StockReport
         /// <returns>DataTable 的结果集</returns>
         public static DataTable DB_Select(string cmdText, CommandType type, params SQLiteParameter[] cmdParameters)
         {
-            using (SQLiteDataAdapter da = new SQLiteDataAdapter())
+            using (SQLiteConnection conn = new SQLiteConnection(connStr))
             {
-                da.SelectCommand = BuildQueryCommand(cmdText, type, cmdParameters);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                return dt;
+                conn.QuickOpen();
+                using (SQLiteDataAdapter da = new SQLiteDataAdapter())
+                {
+                    da.SelectCommand = BuildQueryCommand(conn, cmdText, type, cmdParameters);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    return dt;
+                }
             }
         }
 
@@ -103,12 +115,16 @@ namespace StockReport
         /// <returns>DataSet</returns>
         public static DataSet RunProcedure(string storedProcName, string tableName, params SQLiteParameter[] cmdParameters)
         {
-            using (SQLiteDataAdapter da = new SQLiteDataAdapter())
+            using (SQLiteConnection conn = new SQLiteConnection(connStr))
             {
-                da.SelectCommand = BuildQueryCommand(storedProcName, CommandType.StoredProcedure, cmdParameters);
-                DataSet ds = new DataSet();
-                da.Fill(ds, tableName);
-                return ds;
+                conn.QuickOpen();
+                using (SQLiteDataAdapter da = new SQLiteDataAdapter())
+                {
+                    da.SelectCommand = BuildQueryCommand(conn, storedProcName, CommandType.StoredProcedure, cmdParameters);
+                    DataSet ds = new DataSet();
+                    da.Fill(ds, tableName);
+                    return ds;
+                }
             }
         }
 
@@ -118,9 +134,9 @@ namespace StockReport
         /// <param name="cmdText">SQLite 语句</param>
         /// <param name="cmdParameters">SQLite 参数</param>
         /// <returns>SQLiteCommand</returns>
-        private static SQLiteCommand BuildQueryCommand(string cmdText, params SQLiteParameter[] cmdParameters)
+        private static SQLiteCommand BuildQueryCommand(SQLiteConnection conn, string cmdText, params SQLiteParameter[] cmdParameters)
         {
-            return BuildQueryCommand(cmdText, CommandType.Text, cmdParameters);
+            return BuildQueryCommand(conn, cmdText, CommandType.Text, cmdParameters);
         }
 
         /// <summary>
@@ -130,28 +146,24 @@ namespace StockReport
         /// <param name="type">语句类型 默认为 Text</param>
         /// <param name="cmdParameters">SQLite 参数</param>
         /// <returns>SQLiteCommand</returns>
-        private static SQLiteCommand BuildQueryCommand(string cmdText, CommandType type, params SQLiteParameter[] cmdParameters)
+        private static SQLiteCommand BuildQueryCommand(SQLiteConnection conn, string cmdText, CommandType type, params SQLiteParameter[] cmdParameters)
         {
-            using (SQLiteConnection conn = new SQLiteConnection(connStr))
+            SQLiteCommand command = new SQLiteCommand(cmdText, conn);
+            command.CommandType = type;
+            foreach (SQLiteParameter parameter in cmdParameters)
             {
-                SQLiteCommand command = new SQLiteCommand(cmdText, conn);
-                command.CommandType = type;
-                foreach (SQLiteParameter parameter in cmdParameters)
+                if (parameter != null)
                 {
-                    if (parameter != null)
+                    // 检查未分配值的输出参数,将其分配以DBNull.Value.
+                    if ((parameter.Direction == ParameterDirection.InputOutput || parameter.Direction == ParameterDirection.Input) &&
+                        (parameter.Value == null))
                     {
-                        // 检查未分配值的输出参数,将其分配以DBNull.Value.
-                        if ((parameter.Direction == ParameterDirection.InputOutput || parameter.Direction == ParameterDirection.Input) &&
-                            (parameter.Value == null))
-                        {
-                            parameter.Value = DBNull.Value;
-                        }
-                        command.Parameters.Add(parameter);
+                        parameter.Value = DBNull.Value;
                     }
+                    command.Parameters.Add(parameter);
                 }
-                conn.QuickOpen();
-                return command;
             }
+            return command;
         }
     }
 

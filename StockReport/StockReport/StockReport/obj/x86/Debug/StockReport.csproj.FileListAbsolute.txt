@@ -10,3 +10,5 @@ D:\5\GitDemo\StockReport\StockReport\StockReport\bin\Debug\DevComponents.DotNetB
 D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.exe
 D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.pdb
 D:\5\GitDemo\StockReport\StockReport\StockReport\bin\Debug\System.Data.SQLite.dll
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.FormBase.resources
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.FormMain.resources

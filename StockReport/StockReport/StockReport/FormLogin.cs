@@ -5,6 +5,7 @@ using DevComponents.DotNetBar;
 using System.Data;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Configuration;
 
 namespace StockReport
 {
@@ -18,6 +19,8 @@ namespace StockReport
     {
         // 设置配置文件路径
         internal static readonly string path = Application.StartupPath + "\\Login.ini";
+
+        internal static string FilePath = ConfigurationManager.ConnectionStrings["SQLiteString"].ConnectionString;
         /// <summary>
         /// 记录用户当前登录时的IP 地址,记录日志时用.
         /// </summary>
@@ -33,25 +36,25 @@ namespace StockReport
             comUserId.Items.Clear();
             comUserId.Items.AddRange(UserId);
 
-            if (!System.IO.File.Exists(SQLiteHelper.connStr))
+            if (!System.IO.File.Exists(Application.StartupPath + "\\" + FilePath))
             {
                 try
                 {
-                    SQLiteConnection.CreateFile(SQLiteHelper.connStr);
-                    using (SQLiteConnection conn = new SQLiteConnection(SQLiteHelper.connStr))
-                    {
-                        SQLiteConnectionStringBuilder cb = new SQLiteConnectionStringBuilder();
-                        cb.DataSource = SQLiteHelper.connStr;
-                        cb.Password = "stockxyz";
-                        conn.ConnectionString = cb.ToString();
-                    }
+                    SQLiteConnection.CreateFile(FilePath);
+                    SQLiteHelper.ExecuteNonQuery("CREATE TABLE UserInfo(uid INTEGER PRIMARY KEY,UserId,UserPwd,UserState)");
+                    SQLiteHelper.ExecuteNonQuery("INSERT INTO UserInfo(UserId,UserPwd,UserState) values('admin','" + PublicClass.MD5("") + "','0')");
+                    //SQLiteConnectionStringBuilder cb = new SQLiteConnectionStringBuilder();
+                    //cb.DataSource = SQLiteHelper.connStr;
+                    //cb.Password = "stockxyz";
+                    //conn.ConnectionString = cb.ToString();
                 }
                 catch (Exception)
                 {
-
                     throw;
                 }
             }
+            else
+                SQLiteHelper.connStr = "data source=" + Application.StartupPath + "\\" + FilePath + ";password=stockxyz";
 
             // 获取IP 地址
             try
@@ -127,7 +130,7 @@ namespace StockReport
         /// </summary>
         private bool LoginValidate(string UserName, string UserPwd, out string State)
         {
-            DataTable dt = SQLiteHelper.DB_Select("select UserPwd,UserState from UserInfo where staffname=@UserName", new SQLiteParameter("@UserName", UserName));
+            DataTable dt = SQLiteHelper.DB_Select("select UserPwd,UserState from UserInfo where UserId=@UserId", new SQLiteParameter("@UserId", UserName));
             if (dt.Rows.Count > 0)
             {
                 State = dt.Rows[0][1].ToString();
