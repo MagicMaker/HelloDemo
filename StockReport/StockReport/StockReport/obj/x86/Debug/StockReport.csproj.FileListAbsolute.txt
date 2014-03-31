@@ -1,0 +1,12 @@
+D:\5\GitDemo\StockReport\StockReport\StockReport\bin\Debug\StockReport.exe.config
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.FormLogin.resources
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.Properties.Resources.resources
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\5\GitDemo\StockReport\StockReport\StockReport\bin\Debug\StockReport.exe
+D:\5\GitDemo\StockReport\StockReport\StockReport\bin\Debug\StockReport.pdb
+D:\5\GitDemo\StockReport\StockReport\StockReport\bin\Debug\DevComponents.DotNetBar2.dll
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.exe
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.pdb
+D:\5\GitDemo\StockReport\StockReport\StockReport\bin\Debug\System.Data.SQLite.dll
