@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{24659EA2-FBF2-4289-ACBE-A2D2352B7F22}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UtilityClass</RootNamespace>
+    <AssemblyName>UtilityClass</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\..\..\Downloads\DLL\SQLite\net_4_w32\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\PublicClass.cs" />
+    <Compile Include="DBUtility\SQLHelper.cs" />
+    <Compile Include="DBUtility\SQLiteHelper.cs" />
+    <Compile Include="Common\TraceLog.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NavBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\NavBar.designer.cs">
+      <DependentUpon>NavBar.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\NavBar.resx">
+      <DependentUpon>NavBar.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnDelete02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnModify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnModify02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnView.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnView02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonBG01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ButtonBG02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CompanyLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DesignerLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_UndoHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flexbar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FooterBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\frmImage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HeaderBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Input.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoTmpPath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MessageError.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MessageInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MessageWarn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NavBarBG01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NavBarBG02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NavBtn0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NavBtn1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NavBtn3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NavBtnBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NavBtnMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NavBtnTmpPath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NotNull.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PageFirst.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PageLast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PageNext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PagePrev.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png_52design_fenghong50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReadOnly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RepeatHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RestartHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShowGridlinesHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SideBarBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableHeaderBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TableRowBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TipError.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TipIE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TipInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TipScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TipService.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TipWarn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title1Create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title1Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title1Detail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title1List.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title1Modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title3Detail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Title3List.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TitleLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TitleMain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TitleTmpPath.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

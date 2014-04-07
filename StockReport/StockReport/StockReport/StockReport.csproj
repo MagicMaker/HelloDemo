@@ -20,7 +20,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -60,11 +60,11 @@
     <Compile Include="FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormLogin.cs">
+    <Compile Include="FormBooks.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormLogin.designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <Compile Include="FormBooks.Designer.cs">
+      <DependentUpon>FormBooks.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -74,14 +74,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SFL\PublicClass.cs" />
-    <Compile Include="SFL\SQLHelper.cs" />
-    <Compile Include="SFL\SQLiteHelper.cs" />
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <EmbeddedResource Include="FormBooks.resx">
+      <DependentUpon>FormBooks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
@@ -110,156 +107,68 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\a1.png" />
+    <Folder Include="WinForm\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Add.gif" />
+    <ProjectReference Include="..\UtilityClass\UtilityClass.csproj">
+      <Project>{24659EA2-FBF2-4289-ACBE-A2D2352B7F22}</Project>
+      <Name>UtilityClass</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\AddTableHS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\banner.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnDelete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnDelete02.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnGO.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnModify.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnModify02.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnView.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\BtnView02.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cgmk.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DeleteHS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DesignerLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\DoubleRightArrowHS.png" />
+    <None Include="Resources\Users.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\down.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\EditTableHS.png" />
+    <None Include="Resources\FavoriteStar_16x16.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Edit_UndoHS.png" />
+    <None Include="Resources\IssueTracking_32x32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\kc1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\LogoMain.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\NavBtn0.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\NavBtn1.png" />
+    <None Include="Resources\Keys.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\NavBtnBG.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\NavBtnMain.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\NoteHS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\NotNull.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PageFirst.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PageLast.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PageNext.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PagePrev.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\page_excel.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PrintHS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\PrintPreviewHS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ReadOnly.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RepeatHS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\RestartHS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\saveHS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ShowGridlinesHS.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TipError.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TipIE.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TipInfo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TipScreen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TipService.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TipWarn.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\up.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\wfmk.jpg" />
+    <None Include="Resources\base_scroll_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\WindowsHS.png" />
+    <None Include="Resources\ReportBlank_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ywmk.jpg" />
+    <None Include="Resources\user_32.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\zk.jpg" />
+    <None Include="Resources\buy_32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\home_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BO_Customer_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Person_32x322.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_priest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Administration2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Action_StateMachine_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\updater32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,10 @@
+D:\5\GitDemo\StockReport\StockReport\UtilityClass\obj\Debug\ResolveAssemblyReference.cache
+D:\5\GitDemo\StockReport\StockReport\UtilityClass\obj\Debug\GenerateResource.read.1.tlog
+D:\5\GitDemo\StockReport\StockReport\UtilityClass\obj\Debug\GenerateResource.write.1.tlog
+D:\5\GitDemo\StockReport\StockReport\UtilityClass\obj\Debug\UtilityClass.Properties.Resources.resources
+D:\5\GitDemo\StockReport\StockReport\UtilityClass\bin\Debug\UtilityClass.dll
+D:\5\GitDemo\StockReport\StockReport\UtilityClass\bin\Debug\UtilityClass.pdb
+D:\5\GitDemo\StockReport\StockReport\UtilityClass\bin\Debug\System.Data.SQLite.dll
+D:\5\GitDemo\StockReport\StockReport\UtilityClass\obj\Debug\UtilityClass.dll
+D:\5\GitDemo\StockReport\StockReport\UtilityClass\obj\Debug\UtilityClass.pdb
+D:\5\GitDemo\StockReport\StockReport\UtilityClass\obj\Debug\UtilityClass.NavBar.resources
