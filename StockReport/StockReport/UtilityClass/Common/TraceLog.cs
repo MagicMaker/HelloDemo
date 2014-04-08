@@ -8,7 +8,7 @@ using System.IO;
 namespace UtilityClass
 {
     // 只重写 WriteLine
-    public abstract class MyTraceListener : TraceListener
+    public class MyTraceListener : TraceListener
     {
         // 初始化时给定一个日志文件位置
         public string FilePath { get; private set; }
@@ -16,6 +16,15 @@ namespace UtilityClass
         public MyTraceListener(string filepath)
         {
             FilePath = filepath;
+        }
+
+        /// <summary>
+        /// 保存 错误信息 到指定日志
+        ///  此方法已重写 实际效果同 WriteLine
+        /// </summary>
+        public override void Write(string message)
+        {
+            File.AppendAllText(FilePath, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + Environment.NewLine + message + Environment.NewLine);
         }
 
         /// <summary>

@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBase1 = new UtilityClass.DgvBase();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBase1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,18 +46,29 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBase1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBase1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dgvBase1.IsSelected = null;
-            this.dgvBase1.Location = new System.Drawing.Point(63, 56);
+            this.dgvBase1.IsSelected = false;
+            this.dgvBase1.Location = new System.Drawing.Point(37, 50);
             this.dgvBase1.Name = "dgvBase1";
             this.dgvBase1.RowTemplate.Height = 23;
             this.dgvBase1.Size = new System.Drawing.Size(517, 296);
             this.dgvBase1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(579, 18);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 442);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvBase1);
             this.DoubleBuffered = true;
             this.Name = "FrmEmployee";
@@ -70,5 +82,6 @@
         #endregion
 
         private UtilityClass.DgvBase dgvBase1;
+        private System.Windows.Forms.Button button1;
     }
 }

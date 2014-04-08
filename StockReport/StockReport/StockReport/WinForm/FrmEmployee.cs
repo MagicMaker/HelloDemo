@@ -19,6 +19,11 @@ namespace StockReport.WinForm
 
         private void FrmEmployee_Load(object sender, EventArgs e)
         {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
             DataTable dt = UtilityClass.SqlHelper.DB_Select("select * from jobs");
             dgvBase1.DataBind(dt);
         }

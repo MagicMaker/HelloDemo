@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace StockReport.WinForm
 {
-    public partial class FrmLog : FormBase
+    public partial class FrmSysLog : FormBase
     {
-        public FrmLog()
+        public FrmSysLog()
         {
             InitializeComponent();
             //this.Text = "系统日志";

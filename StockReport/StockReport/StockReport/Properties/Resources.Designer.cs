@@ -158,6 +158,13 @@ namespace StockReport.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap calculator {
+            get {
+                object obj = ResourceManager.GetObject("calculator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap down {
             get {
                 object obj = ResourceManager.GetObject("down", resourceCulture);
@@ -182,6 +189,13 @@ namespace StockReport.Properties {
         internal static System.Drawing.Bitmap home_32 {
             get {
                 object obj = ResourceManager.GetObject("home_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap InsertPicture_32x322 {
+            get {
+                object obj = ResourceManager.GetObject("InsertPicture_32x322", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -221,6 +235,13 @@ namespace StockReport.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Notepad_32x322 {
+            get {
+                object obj = ResourceManager.GetObject("Notepad_32x322", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Person_32x322 {
             get {
                 object obj = ResourceManager.GetObject("Person_32x322", resourceCulture);
@@ -238,6 +259,13 @@ namespace StockReport.Properties {
         internal static System.Drawing.Bitmap ReportBlank_32 {
             get {
                 object obj = ResourceManager.GetObject("ReportBlank_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap search_16 {
+            get {
+                object obj = ResourceManager.GetObject("search_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

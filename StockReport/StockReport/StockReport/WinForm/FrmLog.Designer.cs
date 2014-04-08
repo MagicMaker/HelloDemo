@@ -1,6 +1,6 @@
 ﻿namespace StockReport.WinForm
 {
-    partial class FrmLog
+    partial class FrmSysLog
     {
         /// <summary>
         /// Required designer variable.
@@ -121,7 +121,6 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBase1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvBase1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dgvBase1.IsSelected = null;
             this.dgvBase1.Location = new System.Drawing.Point(42, 80);
             this.dgvBase1.Name = "dgvBase1";
             this.dgvBase1.RowTemplate.Height = 23;

@@ -11,8 +11,13 @@ namespace UtilityClass
 {
     public class DgvBase : DataGridViewX
     {
+        private bool isSelected = false;
         // 首列是否选择列
-        public string IsSelected { get; set; }
+        public bool IsSelected
+        {
+            get { return isSelected; }
+            set { isSelected = value; }
+        }
 
         // 绘制行号
         protected override void OnRowPostPaint(DataGridViewRowPostPaintEventArgs e)
@@ -23,9 +28,10 @@ namespace UtilityClass
 
         public void DataBind(DataTable dt)
         {
-            this.BackgroundColor = Color.Black;
+            this.BackgroundColor = Color.White;
             this.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+            isSelected = true;
             if (!dt.Columns.Contains("IsSelected"))
             {
                 DataColumn dc = dt.Columns.Add("IsSelected", typeof(bool));
@@ -34,6 +40,7 @@ namespace UtilityClass
 
             this.DataSource = dt;
             this.Columns["IsSelected"].HeaderText = "";
+            this.Columns["IsSelected"].Width = 23;
         }
 
         protected override void OnCellClick(DataGridViewCellEventArgs e)

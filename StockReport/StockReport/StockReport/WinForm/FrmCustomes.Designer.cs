@@ -1,6 +1,6 @@
 ﻿namespace StockReport
 {
-    partial class FrmCustom
+    partial class FrmCustomes
     {
         /// <summary>
         /// Required designer variable.

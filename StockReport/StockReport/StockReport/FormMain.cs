@@ -130,6 +130,14 @@ namespace StockReport
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // 保存常用菜单项
+            string strCustom = "";
+            foreach (ButtonItem btn in ribbonBarCustom.Items)
+            {
+                strCustom += btn.Name + ",";
+            }
+            UtilityClass.RWini.WriteIni("Menu", "Custom", strCustom, FormBooks.pathLogin);
+
             if (DialogResult.Yes != MessageBox.Show(this, "确定要退出当前程序吗?", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
                 e.Cancel = true;
         }
@@ -149,9 +157,93 @@ namespace StockReport
             Process.Start("Mspaint.exe");
         }
 
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            ribbonBarCustom.ItemAdded += (o, v) =>
+            {
+                if (!ribbonBarCustom.Visible)
+                    ribbonBarCustom.Visible = true;
+                // 90 不是魔数，它是空隙加上 免费版本 的宽度
+                ribbonBarCustom.Width = Width - ribbonBar11.Width - 90;
+            };
+            ribbonBarCustom.ItemRemoved += (o, v) =>
+            {
+                // 如果最终一个常用功能也没 隐藏容器
+                if (ribbonBarCustom.Items.Count == 0)
+                    ribbonBarCustom.Visible = false;
+                else
+                    // 90 不是魔数，它是空隙加上 免费版本 的宽度
+                    ribbonBarCustom.Width = Width - ribbonBar11.Width - 90;
+            };
+
+            // 加载常用项
+            string[] strCustom = UtilityClass.RWini.ReadIni("Menu", "Custom", FormBooks.pathLogin).Trim(' ', ',').Split(',');
+            if (strCustom.Length > 0)
+            {
+                foreach (string str in strCustom)
+                {
+                    rtiAdd(str);
+                }
+            }
+
+            // 代码移到事件里执行
+            //// 如果最终一个常用功能也没 隐藏容器
+            //if (ribbonBarCustom.Items.Count == 0)
+            //    ribbonBarCustom.Visible = false;
+            //else
+            //    // 90 不是魔数，它是空隙加上 免费版本 的宽度
+            //    ribbonBarCustom.Width = Width - ribbonBar11.Width - 90;
+        }
+
+        /// <summary>
+        /// 用反射加载
+        /// </summary>
+        /// <param name="str">加载项的名称</param>
+        public void rtiAdd(string str)
+        {
+            rtiAdd(ribbonBarCustom.Items.Count, str);
+
+            //if (str.Length > 4)
+            //{
+            //    FieldInfo fi = this.GetType().GetField("tsb1" + str.Substring(4), BindingFlags.NonPublic | BindingFlags.Instance);
+            //    if (fi != null)
+            //    {
+            //        ButtonItem temp = fi.GetValue(this) as ButtonItem;
+            //        ButtonItem btn = new ButtonItem("tsb2" + str.Substring(4));
+            //        btn.Click += (o, v) => TabAdd(o, "Frm" + str.Substring(4));
+            //        btn.Image = temp.Image;
+            //        btn.ImagePosition = eImagePosition.Top;
+            //        btn.Text = temp.Text;
+            //        ribbonBarCustom.Items.Add(btn);
+            //    }
+            //}
+        }
+
+        public void rtiAdd(int index, string str)
+        {
+            if (str.Length > 4)
+            {
+                FieldInfo fi = this.GetType().GetField("tsb1" + str.Substring(4), BindingFlags.NonPublic | BindingFlags.Instance);
+                if (fi != null)
+                {
+                    ButtonItem temp = fi.GetValue(this) as ButtonItem;
+                    ButtonItem btn = new ButtonItem("tsb2" + str.Substring(4));
+                    btn.Click += (o, v) => TabAdd(o, "Frm" + str.Substring(4));
+                    btn.Image = temp.Image;
+                    btn.ImagePosition = eImagePosition.Top;
+                    btn.Text = temp.Text;
+                    // 不知道用插入形式会不会慢
+                    //if (index < 0)
+                    //    ribbonBarCustom.Items.Add(btn);
+                    //else
+                    ribbonBarCustom.Items.Insert(index, btn);
+                }
+            }
+        }
+
         private void tsb1Custom_Click(object sender, EventArgs e)
         {
-            FrmCustom fr = new FrmCustom(ribbonControl1.Items);
+            FrmCustom fr = new FrmCustom(ribbonControl1);
             if (fr.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 // ... 改变常用功能项
@@ -163,6 +255,12 @@ namespace StockReport
             FSLib.App.SimpleUpdater.Updater.CheckUpdateSimple();
         }
 
+        /// <summary>
+        /// 调用此方法以打开一个窗体
+        ///  如果窗体已打开 将激活已打开窗体
+        ///  
+        /// 当载入出错时，一定要注意命名空间是否为 StockReport.WinForm
+        /// </summary>
         public void TabAdd(object sender, string frmName)
         {
             ToolStripMenuItem tsm = sender as ToolStripMenuItem;
