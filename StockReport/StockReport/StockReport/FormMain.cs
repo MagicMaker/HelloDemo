@@ -148,5 +148,73 @@ namespace StockReport
         {
             Process.Start("Mspaint.exe");
         }
+
+        private void tsb1Custom_Click(object sender, EventArgs e)
+        {
+            FrmCustom fr = new FrmCustom(ribbonControl1.Items);
+            if (fr.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                // ... 改变常用功能项
+            }
+        }
+
+        private void tsb1Update_Click(object sender, EventArgs e)
+        {
+            FSLib.App.SimpleUpdater.Updater.CheckUpdateSimple();
+        }
+
+        public void TabAdd(object sender, string frmName)
+        {
+            ToolStripMenuItem tsm = sender as ToolStripMenuItem;
+            if (tsm != null)
+                TabAdd(tsm.Text, frmName);
+            else if (sender != null)
+                TabAdd(sender.ToString(), frmName);
+        }
+
+        /// <summary>
+        /// 调用此方法以打开一个窗体
+        ///  如果窗体已打开 将激活已打开窗体
+        ///  
+        /// 当载入出错时，一定要注意命名空间是否为 StockReport.WinForm
+        /// </summary>
+        /// <param name="title">显示名称</param>
+        /// <param name="frmName">窗体Name</param>
+        public void TabAdd(string title, string frmName)
+        {
+            foreach (TabItem item in tabControl1.Tabs)
+            {
+                if (item.AttachedControl.Controls.Count > 0 && item.AttachedControl.Controls[0].Name == frmName)
+                {
+                    tabControl1.SelectedTab = item;
+                    return;
+                }
+            }
+            TabItem ti = tabControl1.CreateTab(title);
+            TabControlPanel tcp = new TabControlPanel();
+            ti.AttachedControl = tcp;
+            tcp.Dock = DockStyle.Fill;
+            tcp.TabItem = ti;
+            FormBase frm = (FormBase)Assembly.Load("StockReport").CreateInstance("StockReport.WinForm." + frmName);
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.TopLevel = false;
+            frm.Dock = DockStyle.Fill;
+            frm.Show();
+            tcp.Controls.Add(frm);
+            tabControl1.Controls.Add(tcp);
+            tabControl1.SelectedTab = ti;
+        }
+
+        private void tsb1Employee_Click(object sender, EventArgs e)
+        {
+            TabAdd(sender, "FrmEmployee");
+        }
+
+        private void tsb1SysLog_Click(object sender, EventArgs e)
+        {
+            TabAdd(sender, "FrmLog");
+        }
+
+
     }
 }

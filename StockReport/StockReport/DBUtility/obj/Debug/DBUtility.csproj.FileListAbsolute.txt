@@ -1,7 +1,0 @@
-D:\5\GitDemo\StockReport\StockReport\DBUtility\bin\Debug\DBUtility.dll
-D:\5\GitDemo\StockReport\StockReport\DBUtility\bin\Debug\DBUtility.pdb
-D:\5\GitDemo\StockReport\StockReport\DBUtility\obj\Debug\ResolveAssemblyReference.cache
-D:\5\GitDemo\StockReport\StockReport\DBUtility\obj\Debug\DBUtility.dll
-D:\5\GitDemo\StockReport\StockReport\DBUtility\obj\Debug\DBUtility.pdb
-D:\5\GitDemo\StockReport\StockReport\DBUtility\bin\Debug\MySql.Data.dll
-D:\5\GitDemo\StockReport\StockReport\DBUtility\bin\Debug\System.Data.SQLite.dll

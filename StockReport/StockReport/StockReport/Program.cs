@@ -34,13 +34,13 @@ namespace StockReport
     {
         public void OnThreadException(object sender, ThreadExceptionEventArgs e)
         {
-            //[Conditional("DEBUG")]
-            Trace.TraceError("A");
-            Trace.TraceWarning("B");
-            Trace.TraceInformation("C");
-            Trace.WriteLine("ABC");
-            Trace.Flush();  // 开始输出
+            //Trace.TraceError("A");
+            //Trace.TraceWarning("B");
+            //Trace.TraceInformation("C");
+            //Trace.WriteLine("ABC");
+            //Trace.Flush();  // 开始输出
             //System.IO.File.AppendAllText(Application.StartupPath + "\\Error.txt", DateTime.Now.ToString("yyyy-MM-dd HH:mm") + "\t" + e.Exception.Message + "\r\n\r\n");
+            Trace.Write(e.Exception, "未捕获的异常");
             PublicClass.ShowErr(null, "程序出现错误：\r\n" + e.Exception.Message + "\r\n\r\n如有必要，请联系产品供应商以解决此问题！");
         }
     }

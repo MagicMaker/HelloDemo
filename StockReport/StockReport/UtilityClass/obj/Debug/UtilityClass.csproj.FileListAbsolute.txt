@@ -8,3 +8,4 @@ D:\5\GitDemo\StockReport\StockReport\UtilityClass\bin\Debug\System.Data.SQLite.d
 D:\5\GitDemo\StockReport\StockReport\UtilityClass\obj\Debug\UtilityClass.dll
 D:\5\GitDemo\StockReport\StockReport\UtilityClass\obj\Debug\UtilityClass.pdb
 D:\5\GitDemo\StockReport\StockReport\UtilityClass\obj\Debug\UtilityClass.NavBar.resources
+D:\5\GitDemo\StockReport\StockReport\UtilityClass\bin\Debug\DevComponents.DotNetBar2.dll

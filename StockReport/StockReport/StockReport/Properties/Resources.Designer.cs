@@ -60,6 +60,27 @@ namespace StockReport.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap a15683 {
+            get {
+                object obj = ResourceManager.GetObject("a15683", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Action_LinkUnlink_Link_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Action_LinkUnlink_Link_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Action_LinkUnlink_Unlink_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Action_LinkUnlink_Unlink_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Action_StateMachine_32x32 {
             get {
                 object obj = ResourceManager.GetObject("Action_StateMachine_32x32", resourceCulture);
@@ -81,9 +102,51 @@ namespace StockReport.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap BO_Appearance_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("BO_Appearance_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap BO_Category_32x322 {
+            get {
+                object obj = ResourceManager.GetObject("BO_Category_32x322", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap BO_Customer_32x32 {
             get {
                 object obj = ResourceManager.GetObject("BO_Customer_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap BO_StateMachine_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("BO_StateMachine_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap BO_Vendor_32x32 {
+            get {
+                object obj = ResourceManager.GetObject("BO_Vendor_32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ButtonForward2 {
+            get {
+                object obj = ResourceManager.GetObject("ButtonForward2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ButtonHome2 {
+            get {
+                object obj = ResourceManager.GetObject("ButtonHome2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -98,6 +161,13 @@ namespace StockReport.Properties {
         internal static System.Drawing.Bitmap down {
             get {
                 object obj = ResourceManager.GetObject("down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap EntityDataModel_association_32x322 {
+            get {
+                object obj = ResourceManager.GetObject("EntityDataModel_association_32x322", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -130,6 +200,20 @@ namespace StockReport.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap MergeToNewDocument_32x322 {
+            get {
+                object obj = ResourceManager.GetObject("MergeToNewDocument_32x322", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Minus_Orange_32x32_722 {
+            get {
+                object obj = ResourceManager.GetObject("Minus_Orange_32x32_722", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap NavBtnBG {
             get {
                 object obj = ResourceManager.GetObject("NavBtnBG", resourceCulture);
@@ -144,9 +228,23 @@ namespace StockReport.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap plus_32 {
+            get {
+                object obj = ResourceManager.GetObject("plus_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap ReportBlank_32 {
             get {
                 object obj = ResourceManager.GetObject("ReportBlank_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ToDoList_32x322 {
+            get {
+                object obj = ResourceManager.GetObject("ToDoList_32x322", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

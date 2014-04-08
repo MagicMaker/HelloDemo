@@ -141,9 +141,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(15, 14);
+            this.pictureBox1.Image = global::StockReport.Properties.Resources.a15683;
+            this.pictureBox1.Location = new System.Drawing.Point(17, 16);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(110, 105);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 

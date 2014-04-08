@@ -7,8 +7,10 @@ using System.IO;
 
 namespace UtilityClass
 {
-    public class MyTraceListener : TraceListener
+    // 只重写 WriteLine
+    public abstract class MyTraceListener : TraceListener
     {
+        // 初始化时给定一个日志文件位置
         public string FilePath { get; private set; }
 
         public MyTraceListener(string filepath)
@@ -16,26 +18,55 @@ namespace UtilityClass
             FilePath = filepath;
         }
 
-        public override void Write(string message)
-        {
-            //throw new NotImplementedException();
-            File.AppendAllText("D:\\1.log", message);
-        }
-
+        /// <summary>
+        /// 保存 错误信息 到指定日志
+        /// </summary>
         public override void WriteLine(string message)
         {
-            //throw new NotImplementedException();
-            File.AppendAllText("d:\\1.log", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss    ") + message + Environment.NewLine);
+            File.AppendAllText(FilePath, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + Environment.NewLine + message + Environment.NewLine);
         }
 
         /// <summary>
-        /// 输入一个异常
+        /// 输入一个 Exception 对象
+        ///  它将在日志文件中保存 错误信息 和 堆栈信息
         /// </summary>
-        /// <param name="o">可接 Exception ex 的 ex 对象</param>
-        /// <param name="category">分类</param>
-        public override void Write(object o, string category)
+        public override void WriteLine(object o)
         {
-            //base.Write(o, category);
+            string msg = "";
+            if (o is Exception)
+            {
+                Exception ex = (Exception)o;
+                msg = ex.Message + Environment.NewLine;
+                msg += ex.StackTrace;
+            }
+            else if (o != null)
+            {
+                msg = o.ToString();
+            }
+            WriteLine(msg);
+        }
+
+        /// <summary>
+        /// 输入一个 错误信息 和一个 分类名称
+        ///  它将在日志文件中保存 错误信息
+        /// </summary>
+        public override void WriteLine(string message, string category)
+        {
+            string msg = "";
+            if (string.IsNullOrWhiteSpace(category) == false)  // category 参数不为空
+            {
+                msg = category + ":";
+            }
+            msg += message;
+            WriteLine(msg);
+        }
+
+        /// <summary>
+        /// 输入一个 Exception 对象和一个 分类名称
+        ///  它将在日志文件中保存 错误信息 和 堆栈信息
+        /// </summary>
+        public override void WriteLine(object o, string category)
+        {
             string msg = "";
             if (string.IsNullOrWhiteSpace(category) == false)  // category 参数不为空
             {
