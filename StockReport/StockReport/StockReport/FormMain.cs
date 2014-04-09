@@ -255,19 +255,33 @@ namespace StockReport
             FSLib.App.SimpleUpdater.Updater.CheckUpdateSimple();
         }
 
+        // 此方法已过时，它是针对菜单来辨别的
+        ///// <summary>
+        ///// 调用此方法以打开一个窗体
+        /////  如果窗体已打开 将激活已打开窗体
+        /////  
+        ///// 当载入出错时，一定要注意命名空间是否为 StockReport.WinForm
+        ///// </summary>
+        //public void TabAdd(object sender, string frmName)
+        //{
+        //    ToolStripMenuItem tsm = sender as ToolStripMenuItem;
+        //    if (tsm != null)
+        //        TabAdd(tsm.Text, frmName);
+        //    else if (sender != null)
+        //        TabAdd(sender.ToString(), frmName);
+        //}
+
         /// <summary>
         /// 调用此方法以打开一个窗体
         ///  如果窗体已打开 将激活已打开窗体
-        ///  
-        /// 当载入出错时，一定要注意命名空间是否为 StockReport.WinForm
         /// </summary>
+        /// <param name="sender">直接写 sender 即可</param>
+        /// <param name="frmName">被调用窗体名称 统一为 Frm + 菜单名称第四个以后的字符</param>
         public void TabAdd(object sender, string frmName)
         {
-            ToolStripMenuItem tsm = sender as ToolStripMenuItem;
-            if (tsm != null)
-                TabAdd(tsm.Text, frmName);
-            else if (sender != null)
-                TabAdd(sender.ToString(), frmName);
+            ButtonItem btn = sender as ButtonItem;
+            if (btn != null)
+                TabAdd(btn.Text, frmName);
         }
 
         /// <summary>
@@ -294,9 +308,10 @@ namespace StockReport
             tcp.Dock = DockStyle.Fill;
             tcp.TabItem = ti;
             FormBase frm = (FormBase)Assembly.Load("StockReport").CreateInstance("StockReport.WinForm." + frmName);
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.TopLevel = false;
             frm.Dock = DockStyle.Fill;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Name = frmName;
+            frm.TopLevel = false;
             frm.Show();
             tcp.Controls.Add(frm);
             tabControl1.Controls.Add(tcp);
@@ -311,6 +326,36 @@ namespace StockReport
         private void tsb1SysLog_Click(object sender, EventArgs e)
         {
             TabAdd(sender, "FrmLog");
+        }
+
+        private void tsb1Stock_Click(object sender, EventArgs e)
+        {
+            TabAdd(sender, "FrmStock");
+        }
+
+        private void tsb1StockIn_Click(object sender, EventArgs e)
+        {
+            TabAdd(sender, "FrmStockIn");
+        }
+
+        private void tsb1StockOut_Click(object sender, EventArgs e)
+        {
+            TabAdd(sender, "FrmStockOut");
+        }
+
+        private void tsb1StockAllocate_Click(object sender, EventArgs e)
+        {
+            TabAdd(sender, "FrmStockAllocate");
+        }
+
+        private void tsb1StockTaking_Click(object sender, EventArgs e)
+        {
+            TabAdd(sender, "FrmStockTaking");
+        }
+
+        private void tsb1StockAssembly_Click(object sender, EventArgs e)
+        {
+            TabAdd(sender, "FrmStockAssembly");
         }
 
 

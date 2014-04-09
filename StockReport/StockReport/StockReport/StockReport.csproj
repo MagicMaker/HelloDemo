@@ -96,6 +96,42 @@
     <Compile Include="WinForm\FrmLog.Designer.cs">
       <DependentUpon>FrmLog.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinForm\FrmStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\FrmStock.Designer.cs">
+      <DependentUpon>FrmStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForm\FrmStockAllocate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\FrmStockAllocate.Designer.cs">
+      <DependentUpon>FrmStockAllocate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForm\FrmStockAssembly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\FrmStockAssembly.Designer.cs">
+      <DependentUpon>FrmStockAssembly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForm\FrmStockIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\FrmStockIn.Designer.cs">
+      <DependentUpon>FrmStockIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForm\FrmStockOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\FrmStockOut.Designer.cs">
+      <DependentUpon>FrmStockOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForm\FrmStockTaking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\FrmStockTaking.Designer.cs">
+      <DependentUpon>FrmStockTaking.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
