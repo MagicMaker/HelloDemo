@@ -46,7 +46,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBase1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvBase1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dgvBase1.IsSelected = false;
+            //this.dgvBase1.IsSelected = false;
             this.dgvBase1.Location = new System.Drawing.Point(37, 50);
             this.dgvBase1.Name = "dgvBase1";
             this.dgvBase1.RowTemplate.Height = 23;

@@ -50,6 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBUtility\SQLExtensions.cs" />
+    <Compile Include="TxtBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\DgvBaseEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\ListBoxEx.cs">
       <SubType>Component</SubType>
     </Compile>

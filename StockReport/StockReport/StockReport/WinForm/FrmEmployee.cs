@@ -25,7 +25,8 @@ namespace StockReport.WinForm
         {
 
             DataTable dt = UtilityClass.SqlHelper.DB_Select("select * from jobs");
-            dgvBase1.DataBind(dt);
+            //dgvBase1.DataBind(dt);
+            dgvBase1.DataSource = dt;
         }
     }
 }

@@ -7,7 +7,6 @@ using System.IO;
 
 namespace UtilityClass
 {
-    // 只重写 WriteLine
     public class MyTraceListener : TraceListener
     {
         // 初始化时给定一个日志文件位置

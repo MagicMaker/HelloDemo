@@ -13,12 +13,27 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -32,6 +47,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>App.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2">
@@ -49,6 +67,7 @@
     </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -58,11 +77,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormBase.cs">
+    <Compile Include="BaseForm\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBase.Designer.cs">
+    <Compile Include="BaseForm\FormBase.Designer.cs">
       <DependentUpon>FormBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\FormBaseDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\FormBaseDetail.Designer.cs">
+      <DependentUpon>FormBaseDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseForm\FormBaseDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\FormBaseDialog.Designer.cs">
+      <DependentUpon>FormBaseDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\FrmChangePwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\FrmChangePwd.designer.cs">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
     </Compile>
     <Compile Include="FormBooks.cs">
       <SubType>Form</SubType>
@@ -76,10 +113,10 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmCustom.cs">
+    <Compile Include="Dialog\FrmCustom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmCustom.Designer.cs">
+    <Compile Include="Dialog\FrmCustom.Designer.cs">
       <DependentUpon>FrmCustom.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -96,44 +133,53 @@
     <Compile Include="WinForm\FrmLog.Designer.cs">
       <DependentUpon>FrmLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForm\FrmStock.cs">
+    <Compile Include="WinForm\stock\FrmStock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinForm\FrmStock.Designer.cs">
+    <Compile Include="WinForm\stock\FrmStock.Designer.cs">
       <DependentUpon>FrmStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForm\FrmStockAllocate.cs">
+    <Compile Include="WinForm\stock\FrmStockAllocate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinForm\FrmStockAllocate.Designer.cs">
+    <Compile Include="WinForm\stock\FrmStockAllocate.Designer.cs">
       <DependentUpon>FrmStockAllocate.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForm\FrmStockAssembly.cs">
+    <Compile Include="WinForm\stock\FrmStockAssembly.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinForm\FrmStockAssembly.Designer.cs">
+    <Compile Include="WinForm\stock\FrmStockAssembly.Designer.cs">
       <DependentUpon>FrmStockAssembly.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForm\FrmStockIn.cs">
+    <Compile Include="WinForm\stock\FrmStockIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinForm\FrmStockIn.Designer.cs">
+    <Compile Include="WinForm\stock\FrmStockIn.Designer.cs">
       <DependentUpon>FrmStockIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForm\FrmStockOut.cs">
+    <Compile Include="WinForm\stock\FrmStockOut.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinForm\FrmStockOut.Designer.cs">
+    <Compile Include="WinForm\stock\FrmStockOut.Designer.cs">
       <DependentUpon>FrmStockOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForm\FrmStockTaking.cs">
+    <Compile Include="WinForm\stock\FrmStockTaking.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WinForm\FrmStockTaking.Designer.cs">
+    <Compile Include="WinForm\stock\FrmStockTaking.Designer.cs">
       <DependentUpon>FrmStockTaking.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormBase.resx">
+    <EmbeddedResource Include="BaseForm\FormBase.resx">
       <DependentUpon>FormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\FormBaseDetail.resx">
+      <DependentUpon>FormBaseDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm\FormBaseDialog.resx">
+      <DependentUpon>FormBaseDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\FrmChangePwd.resx">
+      <DependentUpon>FrmChangePwd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBooks.resx">
       <DependentUpon>FormBooks.cs</DependentUpon>
@@ -141,7 +187,7 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmCustom.resx">
+    <EmbeddedResource Include="Dialog\FrmCustom.resx">
       <DependentUpon>FrmCustom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -159,6 +205,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm\FrmLog.resx">
       <DependentUpon>FrmLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\stock\FrmStock.resx">
+      <DependentUpon>FrmStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\stock\FrmStockAllocate.resx">
+      <DependentUpon>FrmStockAllocate.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
@@ -286,6 +338,34 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a15682.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

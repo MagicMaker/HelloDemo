@@ -30,16 +30,17 @@
         {
             this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtUserPwd = new System.Windows.Forms.TextBox();
+            this.comUserId = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.btnOpen = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.highlighter1 = new DevComponents.DotNetBar.Validator.Highlighter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,25 +55,29 @@
             // 
             // textBox2
             // 
+            this.highlighter1.SetHighlightOnFocus(this.textBox2, true);
             this.textBox2.Location = new System.Drawing.Point(181, 91);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(195, 21);
             this.textBox2.TabIndex = 5;
             // 
-            // textBox1
+            // txtUserPwd
             // 
-            this.textBox1.Location = new System.Drawing.Point(181, 55);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 21);
-            this.textBox1.TabIndex = 3;
+            this.highlighter1.SetHighlightOnFocus(this.txtUserPwd, true);
+            this.txtUserPwd.Location = new System.Drawing.Point(181, 55);
+            this.txtUserPwd.Name = "txtUserPwd";
+            this.txtUserPwd.PasswordChar = '●';
+            this.txtUserPwd.Size = new System.Drawing.Size(236, 21);
+            this.txtUserPwd.TabIndex = 3;
             // 
-            // comboBox1
+            // comUserId
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(181, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(236, 20);
-            this.comboBox1.TabIndex = 1;
+            this.comUserId.FormattingEnabled = true;
+            this.highlighter1.SetHighlightOnFocus(this.comUserId, true);
+            this.comUserId.Location = new System.Drawing.Point(181, 19);
+            this.comUserId.Name = "comUserId";
+            this.comUserId.Size = new System.Drawing.Size(236, 20);
+            this.comUserId.TabIndex = 1;
             // 
             // label3
             // 
@@ -121,14 +126,15 @@
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.Location = new System.Drawing.Point(56, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "新建帐套(&A)...";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(56, 145);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(100, 23);
+            this.btnAdd.TabIndex = 9;
+            this.btnAdd.Text = "新建帐套(&A)...";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // groupBox1
             // 
@@ -148,6 +154,10 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // highlighter1
+            // 
+            this.highlighter1.ContainerControl = this;
+            // 
             // FormBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -155,14 +165,14 @@
             this.ClientSize = new System.Drawing.Size(433, 180);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtUserPwd);
+            this.Controls.Add(this.comUserId);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnOpen);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
@@ -181,16 +191,17 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comUserId;
+        private System.Windows.Forms.TextBox txtUserPwd;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button4;
+        private DevComponents.DotNetBar.Validator.Highlighter highlighter1;
 
     }
 }

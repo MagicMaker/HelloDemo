@@ -26,7 +26,8 @@ namespace StockReport.WinForm
 
         private void FrmLog_Load(object sender, EventArgs e)
         {
-            dgvBase1.DataBind(UtilityClass.SQLiteHelper.DB_Select("select * from jobs"));
+            //dgvBase1.DataBind(UtilityClass.SQLiteHelper.DB_Select("select * from jobs"));
+            dgvBase1.DataSource = UtilityClass.SQLiteHelper.DB_Select("select * from jobs");
         }
     }
 }

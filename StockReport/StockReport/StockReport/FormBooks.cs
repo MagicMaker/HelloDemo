@@ -44,5 +44,11 @@ namespace StockReport
             // 插入日志到数据库
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            this.highlighter1.SetHighlightColor(txtUserPwd, DevComponents.DotNetBar.Validator.eHighlightColor.Red);
+            txtUserPwd.Focus();
+        }
     }
 }

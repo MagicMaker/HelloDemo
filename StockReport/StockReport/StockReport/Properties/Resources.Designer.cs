@@ -60,6 +60,13 @@ namespace StockReport.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap a15682 {
+            get {
+                object obj = ResourceManager.GetObject("a15682", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap a15683 {
             get {
                 object obj = ResourceManager.GetObject("a15683", resourceCulture);

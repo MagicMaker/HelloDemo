@@ -168,12 +168,16 @@ namespace StockReport
             };
             ribbonBarCustom.ItemRemoved += (o, v) =>
             {
-                // 如果最终一个常用功能也没 隐藏容器
-                if (ribbonBarCustom.Items.Count == 0)
-                    ribbonBarCustom.Visible = false;
-                else
-                    // 90 不是魔数，它是空隙加上 免费版本 的宽度
-                    ribbonBarCustom.Width = Width - ribbonBar11.Width - 90;
+                try
+                {
+                    // 如果最终一个常用功能也没 隐藏容器
+                    if (ribbonBarCustom.Items.Count == 0)
+                        ribbonBarCustom.Visible = false;
+                    else
+                        // 90 不是魔数，它是空隙加上 免费版本 的宽度
+                        ribbonBarCustom.Width = Width - ribbonBar11.Width - 90;
+                }
+                catch { }
             };
 
             // 加载常用项
@@ -358,6 +362,35 @@ namespace StockReport
             TabAdd(sender, "FrmStockAssembly");
         }
 
+        private void FormMain_ResizeEnd(object sender, EventArgs e)
+        {
+            // 如果 免费版本 几个字挡住了菜单项 则隐藏
+            int width = this.reflectionLabel1.Width;
+            foreach (RibbonBar bar in this.ribbonControl1.SelectedRibbonTabItem.Panel.Controls)
+            {
+                width += bar.Width;
+            }
+            if (this.ClientRectangle.Width < width)
+            {
+                if (this.reflectionLabel1.Visible)
+                {
+                    this.reflectionLabel1.Visible = false;
+                }
+            }
+            else if (!this.reflectionLabel1.Visible)
+            {
+                this.reflectionLabel1.Visible = true;
+            }
+        }
 
+        private void cmsCustom_Click(object sender, EventArgs e)
+        {
+            tsb1Custom.RaiseClick();
+        }
+
+        private void tsb1ChangePwd_Click(object sender, EventArgs e)
+        {
+            new FrmChangePwd().ShowDialog();
+        }
     }
 }

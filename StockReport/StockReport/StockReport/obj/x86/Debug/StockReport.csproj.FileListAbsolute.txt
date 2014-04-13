@@ -17,3 +17,8 @@ D:\5\GitDemo\StockReport\StockReport\StockReport\bin\Debug\UtilityClass.pdb
 D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.WinForm.FrmEmployee.resources
 D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.FrmCustom.resources
 D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.WinForm.FrmSysLog.resources
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.WinForm.FrmStockAllocate.resources
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.FormBaseDialog.resources
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.FrmChangePwd.resources
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.FormBaseDetail.resources
+D:\5\GitDemo\StockReport\StockReport\StockReport\obj\x86\Debug\StockReport.WinForm.FrmStock.resources

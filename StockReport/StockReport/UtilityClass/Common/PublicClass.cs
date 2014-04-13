@@ -43,46 +43,18 @@ namespace UtilityClass
 
         public static void SetDgvTitle(DataGridView dgvBase, string[] strTitle, bool isVisible)
         {
-#warning 这里速度优先 若要不报错优先 将下面代码解除注释
+            foreach (string str in strTitle)
             {
-                foreach (string str in strTitle)
-                {
-                    string[] temp = str.Split(',');
-                    dgvBase.Columns[temp[0]].HeaderText = temp[1];
-                }
-                // 调整列宽
-                dgvBase.AutoResizeColumns();
+                string[] temp = str.Split(',');
+                dgvBase.Columns[temp[0]].HeaderText = temp[1];
             }
-            //{
-            //    List<string> title = new List<string>();
-            //    title.AddRange(new string[] { "IsSelected,选", "handle_staffname,经手人", "audit_staffname,审核人", "audit_status,审核状态", "enname,货币名称", "rates,汇率", "serialnumber,货品编号", "pname,货品名称", "unit,计量单位", "spec,规格", "colors,颜色", "pcolor,颜色", "qty,数量", "tax_price,含税价", "tax_rate,税率", "price,单价", "tax_amount,税金", "amount,总金额", "remark,备注", "remark1,备注", "remark2,备注", "remark3,备注" });
-            //    title.AddRange(strTitle);
-            //    foreach (string str in title)
-            //    {
-            //        string[] temp = str.Split(',');
-            //        if (temp.Length > 1 && dgvBase.Columns.Contains(temp[0]))
-            //        {
-            //            dgvBase.Columns[temp[0]].HeaderText = temp[1];
-            //        }
-            //    }
-            //    // 调整列宽
-            //    dgvBase.AutoResizeColumns();
-            //    int index = dgvBase.ColumnCount - 1;
-            //    if (dgvBase.Columns[index].Displayed)
-            //    {
-            //        dgvBase.Columns[index].MinimumWidth = 80;
-            //        dgvBase.Columns[index].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            //    }
-            //}
+            // 调整列宽
+            dgvBase.AutoResizeColumns();
             // 隐藏英文标题
             if (!isVisible)
-            {
                 foreach (DataGridViewColumn dc in dgvBase.Columns)
-                {
                     if (dc.HeaderText == dc.Name)
                         dc.Visible = false;
-                }
-            }
         }
 
         /// <summary>
@@ -314,7 +286,7 @@ namespace UtilityClass
                 return DateTime.Today;
             }
         }
-        
+
         #region EnCode 加密
         const string KEY_64 = "269up9og";//注意了，是8个字符，64位 --
         const string IV_64 = "r4tupn0k";//可以和上面的不一致 但是一定要是8位
